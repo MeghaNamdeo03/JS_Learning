@@ -40,8 +40,27 @@
 //    1. Event bubbling
 //    2. Event capturing 
 
+document.getElementById('owl').addEventListener('click',function(e){
+    console.log("owl click");
+   },false) //yha third parameter false bhi hota hai default
+   //google ki link me ni jana hai 
+   document.getElementById('google').addEventListener('click',function(e){
+    e.preventDefault();
+    console.log("google click");
+   },false) //yha third parameter false bhi hota hai default
+   
+    //image me click keru or bo image gyab ho jay
+    document.querySelector('#images').addEventListener('click',function(e){
+        
+        if(e.target.tagName==='IMG'){
+        console.log(e.target.parentNode);
+        let removeit = e.target.parentNode
+        removeit.remove()// one method to remove 
+        }
+        // or 
+        //removeit.parentNode.removeChild(removeit)
+    },false)
 
-    
     
 </script>
 </html>
